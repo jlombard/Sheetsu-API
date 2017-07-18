@@ -217,7 +217,7 @@ class LocationsVC: UITableViewController, LocationCellDelegate {
         SVProgressHUD.show(withStatus: "Getting location")
         
         //get the current user location
-        locationService = LocationRequest(accuracy: .house, frequency: .oneShot, {
+        locationService = LocationRequest(accuracy: .navigation, frequency: .oneShot, {
             [weak self](request, location) -> (Void) in
             SVProgressHUD.dismiss()
             
@@ -246,7 +246,7 @@ class LocationsVC: UITableViewController, LocationCellDelegate {
         let locationModel = locations[index.row]
         
         //get the current user location
-        locationService = LocationRequest(accuracy: .house, frequency: .oneShot, {
+        locationService = LocationRequest(accuracy: .navigation, frequency: .oneShot, {
             [weak self](request, location) -> (Void) in
             SVProgressHUD.dismiss()
             locationModel.coordinates = location.coordinate
