@@ -13,7 +13,7 @@ import SwiftLocation
 import SVProgressHUD
 
 
-class LocationsVC: UITableViewController {
+class LocationsVC: UITableViewController, LocationCellDelegate {
     //A required sheet instance
     fileprivate let sheetPage = SheetSuManager("c0cbd25b3de8")
     
@@ -131,7 +131,9 @@ class LocationsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let location = locations[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as! LocationCell
+        
+        cell.delegate = self
         
         let titleLabel = cell.contentView.viewWithTag(1) as?UILabel
         titleLabel?.text = location.name
@@ -171,6 +173,52 @@ class LocationsVC: UITableViewController {
             self?.locationService = nil
         }
         locationService?.resume()
+    }
+    
+    //MARK: --
+    //MARK: LocationCellDelegate
+    func locationCell(didUpdateLocationAction cell: LocationCell) {
+        //chech if location service is launched
+        guard locationService == nil,
+        let index = tableView.indexPath(for: cell) else{return}
+        SVProgressHUD.show(withStatus: "Getting location")
+        
+        //Get location model to update
+        let locationModel = locations[index.row]
+        
+        //get the current user location
+        locationService = LocationRequest(accuracy: .house, frequency: .oneShot, {
+            [weak self](request, location) -> (Void) in
+            SVProgressHUD.dismiss()
+            locationModel.coordinates = location.coordinate
+            
+            //Update sheet row
+            self?.updateLocation(locationModel)
+            self?.locationService = nil
+        }) { [weak self] (_, _, error) -> (Void) in
+            SVProgressHUD.dismiss()
+            
+            //present error alert in case of failure
+            self?.presentErrorAlert("Location tracking error.", message: error.localizedDescription)
+            self?.locationService = nil
+        }
+        locationService?.resume()
+    }
+    
+    fileprivate func updateLocation(_ location:Location){
+        SVProgressHUD.show(withStatus: "Updating location")
+        sheetPage.updateRow(location, sheetTabName: "Locations", onSuccess: { 
+            [weak self] in
+            SVProgressHUD.dismiss()
+            //just reloasd data in table
+            self?.tableView.reloadData()
+        }) { [weak self](error) in
+            SVProgressHUD.dismiss()
+            
+            //present error alert in case of failure
+            self?.presentErrorAlert("Location updating error.", message: error?.localizedDescription)
+            self?.locationService = nil
+        }
     }
 }
 

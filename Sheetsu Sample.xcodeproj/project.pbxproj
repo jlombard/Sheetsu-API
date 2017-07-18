@@ -21,6 +21,8 @@
 		9C50E39A1F1DEE77007C1488 /* CLLocationCoordinate2D + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E3991F1DEE77007C1488 /* CLLocationCoordinate2D + String.swift */; };
 		9C50E39C1F1DFC32007C1488 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E39B1F1DFC32007C1488 /* MapVC.swift */; };
 		9C50E39F1F1DFFA1007C1488 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E39E1F1DFFA1007C1488 /* LocationAnnotation.swift */; };
+		9C62088A1F1E4B6E00705D58 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6208891F1E4B6E00705D58 /* Updatable.swift */; };
+		9C62088D1F1E4F5800705D58 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62088C1F1E4F5800705D58 /* LocationCell.swift */; };
 		C4FE1F31BFD990CC1DCA1B28 /* Pods_Sheetsu_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB15A546F04F236647E06A8 /* Pods_Sheetsu_Sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		9C50E3991F1DEE77007C1488 /* CLLocationCoordinate2D + String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CLLocationCoordinate2D + String.swift"; path = "Extensions/CLLocationCoordinate2D + String.swift"; sourceTree = "<group>"; };
 		9C50E39B1F1DFC32007C1488 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapVC.swift; path = ViewController/MapVC.swift; sourceTree = "<group>"; };
 		9C50E39E1F1DFFA1007C1488 /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationAnnotation.swift; path = Map/LocationAnnotation.swift; sourceTree = "<group>"; };
+		9C6208891F1E4B6E00705D58 /* Updatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Updatable.swift; path = SheetSu/Protocols/Updatable.swift; sourceTree = "<group>"; };
+		9C62088C1F1E4F5800705D58 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = Views/LocationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		9C50E3711F1DBF24007C1488 /* Sheetsu Sample */ = {
 			isa = PBXGroup;
 			children = (
+				9C62088B1F1E4F4200705D58 /* Views */,
 				9C50E39D1F1DFF8B007C1488 /* Map */,
 				9C50E3961F1DECF6007C1488 /* Extensions */,
 				9C50E3901F1DEA54007C1488 /* ViewControllers */,
@@ -95,6 +100,7 @@
 		9C50E3841F1DC06C007C1488 /* SheetSu */ = {
 			isa = PBXGroup;
 			children = (
+				9C6208881F1E4B4900705D58 /* Protocols */,
 				9C50E38D1F1DCCA1007C1488 /* Services */,
 				9C50E3871F1DC122007C1488 /* Models */,
 				9C50E3851F1DC114007C1488 /* SheetSuManager.swift */,
@@ -152,6 +158,22 @@
 				9C50E39E1F1DFFA1007C1488 /* LocationAnnotation.swift */,
 			);
 			name = Map;
+			sourceTree = "<group>";
+		};
+		9C6208881F1E4B4900705D58 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9C6208891F1E4B6E00705D58 /* Updatable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		9C62088B1F1E4F4200705D58 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C62088C1F1E4F5800705D58 /* LocationCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B6B95321AB4CAD1BC0E8CD51 /* Pods */ = {
@@ -309,10 +331,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C62088A1F1E4B6E00705D58 /* Updatable.swift in Sources */,
 				9C50E3951F1DEB4C007C1488 /* UIViewController + Alert Controller.swift in Sources */,
 				9C50E38C1F1DC9A4007C1488 /* Constants.swift in Sources */,
 				9C50E3921F1DEA87007C1488 /* LocationsVC.swift in Sources */,
 				9C50E38F1F1DCCBD007C1488 /* RequestService.swift in Sources */,
+				9C62088D1F1E4F5800705D58 /* LocationCell.swift in Sources */,
 				9C50E3861F1DC114007C1488 /* SheetSuManager.swift in Sources */,
 				9C50E39C1F1DFC32007C1488 /* MapVC.swift in Sources */,
 				9C50E3891F1DC84A007C1488 /* Location.swift in Sources */,

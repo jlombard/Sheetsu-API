@@ -13,6 +13,7 @@ import CoreLocation
 
 /**
  Object represented Row in location page of the provided sheet
+ If object could be updated, it MUST confirm to protocol Updatable
  To add new attribute:
  - Add new column to the sheet page 
  - Add new property to the class
@@ -20,11 +21,17 @@ import CoreLocation
  
  For more information about Mapping, see https://github.com/Hearst-DD/ObjectMapper
  */
-class Location:Mappable {
+class Location:Updatable {
     fileprivate(set) var uid:String!
     var name:String!
     var coordinates:CLLocationCoordinate2D!
     var date:Date!
+    
+    var primaryKeyName: String{
+        get{
+            return Key.udid
+        }
+    }
     
     init() {
         uid = NSUUID().uuidString

@@ -39,4 +39,19 @@ class RequestService{
             onFail?(error)
         }
     }
+    
+    //Update row from the model data
+    func updateRow<T:Mappable>(_ urlString:String, model:T, onSuccess:SheetUpdatingsSuccess?, onFail:SheetRequestFail?){
+        let params = model.toJSON()
+        Alamofire.request(urlString, method: .put, parameters: params, encoding: JSONEncoding.default)
+        .response { (response) in
+            guard let error = response.error else{
+                onSuccess?()
+                return
+            }
+            onFail?(error)
+        }
+    }
+    
+    
 }

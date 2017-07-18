@@ -36,4 +36,5 @@ func coordinateTransform()->TransformOf<CLLocationCoordinate2D, String>{
 
 enum SheetSuError:Error {
     case invalidRowsCount
+    case invalidInputData
 }

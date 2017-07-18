@@ -31,16 +31,16 @@
         <scene sceneID="diW-e7-3hV">
             <objects>
                 <tableViewController id="Ve5-j9-4JB" customClass="LocationsVC" customModule="Sheetsu_Sample" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="28" sectionFooterHeight="28" id="sk4-88-v6i">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="192" sectionHeaderHeight="28" sectionFooterHeight="28" id="sk4-88-v6i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="63" id="yhN-5G-gq3">
-                                <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="98" id="yhN-5G-gq3" customClass="LocationCell" customModule="Sheetsu_Sample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="98"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yhN-5G-gq3" id="bzG-3W-4Fu">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="62.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="97.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEy-bc-y1n">
@@ -55,15 +55,29 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fd-ZU-nHH">
+                                            <rect key="frame" x="8" y="62" width="100" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <state key="normal" title="Location Update"/>
+                                            <connections>
+                                                <action selector="btnUpdateLocationAction:" destination="yhN-5G-gq3" eventType="touchUpInside" id="pUz-OL-INx"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="4Fd-ZU-nHH" secondAttribute="bottom" constant="7.5" id="3y0-go-YQi"/>
                                         <constraint firstItem="Hgi-tf-Ytq" firstAttribute="top" secondItem="XEy-bc-y1n" secondAttribute="bottom" constant="8" id="43s-iG-S8B"/>
                                         <constraint firstItem="XEy-bc-y1n" firstAttribute="leading" secondItem="bzG-3W-4Fu" secondAttribute="leadingMargin" id="4pp-pa-jl8"/>
-                                        <constraint firstAttribute="bottom" secondItem="Hgi-tf-Ytq" secondAttribute="bottom" constant="8.5" id="HFl-ws-uUs"/>
                                         <constraint firstItem="XEy-bc-y1n" firstAttribute="top" secondItem="bzG-3W-4Fu" secondAttribute="topMargin" id="aXE-Gd-Bco"/>
                                         <constraint firstItem="Hgi-tf-Ytq" firstAttribute="leading" secondItem="bzG-3W-4Fu" secondAttribute="leadingMargin" id="gDA-ZF-xxh"/>
+                                        <constraint firstItem="4Fd-ZU-nHH" firstAttribute="top" secondItem="Hgi-tf-Ytq" secondAttribute="bottom" constant="8" id="prm-oo-CCC"/>
+                                        <constraint firstItem="4Fd-ZU-nHH" firstAttribute="leading" secondItem="bzG-3W-4Fu" secondAttribute="leadingMargin" id="wrG-Bc-g3e"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblDescription" destination="Hgi-tf-Ytq" id="ZbT-HI-DfW"/>
+                                    <outlet property="lblName" destination="XEy-bc-y1n" id="sTv-rO-AuD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -86,6 +100,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="lF9-KP-Gwk">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle"/>
                     </refreshControl>

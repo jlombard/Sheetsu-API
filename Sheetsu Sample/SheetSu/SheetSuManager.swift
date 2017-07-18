@@ -80,7 +80,6 @@ class SheetSuManager{
         - onSuccess: Calls if adding was successfull.
         - onFail: Calls if adding failed.
     */
-    
     func addRows(_ models:[Mappable],
                 sheetTabName:String? = nil,
                 onSuccess:SheetUpdatingsSuccess? = nil,
@@ -95,6 +94,35 @@ class SheetSuManager{
             urlString += "/sheets/\(name)"
         }
         requestSrvice.postRow(urlString, rows: models, onSuccess: onSuccess, onFail: onFail)
+    }
+    
+    
+    /**
+     /**
+     Update row on sheet page with a given name
+     - Parameters:
+        - model: Object that represent updated row data. It MUST have an uid property. It is a primary key
+        - sheetTabName: Sheet name. Optional. If nil, the default sheet is parsed.
+        - onSuccess: Calls if adding was successfull.
+        - onFail: Calls if adding failed.
+     */
+    */
+    func updateRow<T:Updatable>(_ model:T,
+                   sheetTabName:String? = nil,
+                   onSuccess:SheetUpdatingsSuccess? = nil,
+                   onFail:SheetRequestFail? = nil){
+        //Check if model has a uid property value
+        guard let uid = model.uid else{
+            onFail?(SheetSuError.invalidInputData)
+            return
+        }
+        var urlString = Constants.baseURL + sheetId
+        //Add sheet name to the url
+        if let name = sheetTabName{
+            urlString += "/sheets/\(name)"
+        }
+        urlString += "/\(model.primaryKeyName)/\(uid)"
+        requestSrvice.updateRow(urlString, model: model, onSuccess: onSuccess, onFail: onFail)
     }
 
 }
