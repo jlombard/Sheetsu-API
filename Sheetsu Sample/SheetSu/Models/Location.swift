@@ -40,6 +40,7 @@ class Location:Updatable {
     //MARK: --
     //MARK: Mappable
     required init?(map: Map) {
+        guard let uid = map.JSON[Key.udid] as? String, !uid.isEmpty else{return nil}
         mapping(map: map)
     }
     
@@ -48,6 +49,16 @@ class Location:Updatable {
         name <- map[Key.name]
         date <- (map[Key.date], CustomDateFormatTransform(formatString: Constants.dateFormat))
         coordinates <- (map[Key.location], coordinateTransform())
+    }
+}
+
+extension Location:Hashable{
+    var hashValue: Int{
+        return uid.hashValue
+    }
+    
+    public static func ==(lhs: Location, rhs: Location) -> Bool{
+        return lhs.uid == rhs.uid
     }
 }
 

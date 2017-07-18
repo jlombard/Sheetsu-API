@@ -53,5 +53,15 @@ class RequestService{
         }
     }
     
-    
+    //Delete row
+    func deleteRow(_ urlString:String, onSuccess:SheetUpdatingsSuccess?, onFail:SheetRequestFail?){
+        Alamofire.request(urlString, method: .delete)
+            .response { (response) in
+                guard let error = response.error else{
+                    onSuccess?()
+                    return
+                }
+                onFail?(error)
+        }
+    }
 }

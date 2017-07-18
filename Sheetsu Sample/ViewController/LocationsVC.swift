@@ -16,6 +16,7 @@ import SVProgressHUD
 class LocationsVC: UITableViewController, LocationCellDelegate {
     //A required sheet instance
     fileprivate let sheetPage = SheetSuManager("c0cbd25b3de8")
+    fileprivate let sheetPageName = "Locations"
     
     //Parsed locations
     fileprivate var locations = [Location]()
@@ -48,7 +49,7 @@ class LocationsVC: UITableViewController, LocationCellDelegate {
     //MARK: --
     //MARK: Instance methods
     @objc fileprivate func reloadLocations(){
-        sheetPage.parseSheet(mappingClass: Location.self, sheetTabName: "Locations", onSuccess: {
+        sheetPage.parseSheet(mappingClass: Location.self, sheetTabName: sheetPageName, onSuccess: {
             [weak self](objects) in
             SVProgressHUD.dismiss()
             self?.refreshControl?.endRefreshing()
@@ -100,7 +101,7 @@ class LocationsVC: UITableViewController, LocationCellDelegate {
         SVProgressHUD.show(withStatus: "Adding new row")
         
         //Adding a row to the sheet page
-        sheetPage.addRows([model], sheetTabName: "Locations", onSuccess: {
+        sheetPage.addRows([model], sheetTabName: sheetPageName, onSuccess: {
             [weak self] in
             SVProgressHUD.dismiss()
             
@@ -120,6 +121,48 @@ class LocationsVC: UITableViewController, LocationCellDelegate {
             SVProgressHUD.dismiss()
             self?.presentErrorAlert("Location adding error.", message: error?.localizedDescription)
         }
+    }
+    
+    fileprivate func updateLocation(_ location:Location){
+        SVProgressHUD.show(withStatus: "Updating location")
+        sheetPage.updateRow(location, sheetTabName: sheetPageName, onSuccess: {
+            [weak self] in
+            SVProgressHUD.dismiss()
+            //just reloasd data in table
+            self?.tableView.reloadData()
+        }) { [weak self](error) in
+            SVProgressHUD.dismiss()
+            
+            //present error alert in case of failure
+            self?.presentErrorAlert("Location updating error.", message: error?.localizedDescription)
+            self?.locationService = nil
+        }
+    }
+    
+    fileprivate func deleteLocation(_ location:Location){
+        let alert = UIAlertController(title: "Location deleting", message: "Are you sure you want to delete the location?", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancel)
+        
+        let okAction = UIAlertAction(title: "Delete", style: .destructive) {
+            [weak self](_) in
+            SVProgressHUD.show(withStatus: "Location deleting")
+            guard let pageName = self?.sheetPageName else{return}
+            self?.sheetPage.deleteRow(location, sheetTabName: pageName, onSuccess: {
+                SVProgressHUD.dismiss()
+                guard let index = self?.locations.index(of: location) else{return}
+                self?.tableView.beginUpdates()
+                self?.locations.remove(at: index)
+                self?.tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+                self?.tableView.endUpdates()
+            }, onFail: { [weak self](error) in
+                //Present error alert in case of failure
+                SVProgressHUD.dismiss()
+                self?.presentErrorAlert("Location adding error.", message: error?.localizedDescription)
+            })
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
 
     //MARK: --
@@ -147,6 +190,22 @@ class LocationsVC: UITableViewController, LocationCellDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let location = locations[indexPath.row]
         performSegue(withIdentifier: "ShowMapView", sender: [location])
+    }
+    
+    //Deleting
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        tableView.setEditing(false, animated: true)
+        guard editingStyle == .delete else{return}
+        let location = locations[indexPath.row]
+        deleteLocation(location)
     }
     
     //MARK: --
@@ -203,22 +262,6 @@ class LocationsVC: UITableViewController, LocationCellDelegate {
             self?.locationService = nil
         }
         locationService?.resume()
-    }
-    
-    fileprivate func updateLocation(_ location:Location){
-        SVProgressHUD.show(withStatus: "Updating location")
-        sheetPage.updateRow(location, sheetTabName: "Locations", onSuccess: { 
-            [weak self] in
-            SVProgressHUD.dismiss()
-            //just reloasd data in table
-            self?.tableView.reloadData()
-        }) { [weak self](error) in
-            SVProgressHUD.dismiss()
-            
-            //present error alert in case of failure
-            self?.presentErrorAlert("Location updating error.", message: error?.localizedDescription)
-            self?.locationService = nil
-        }
     }
 }
 
