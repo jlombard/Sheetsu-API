@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C50E3731F1DBF24007C1488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E3721F1DBF24007C1488 /* AppDelegate.swift */; };
+		9C50E3781F1DBF24007C1488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C50E3761F1DBF24007C1488 /* Main.storyboard */; };
+		9C50E37A1F1DBF24007C1488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C50E3791F1DBF24007C1488 /* Assets.xcassets */; };
+		9C50E37D1F1DBF24007C1488 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C50E37B1F1DBF24007C1488 /* LaunchScreen.storyboard */; };
+		9C50E3861F1DC114007C1488 /* SheetSuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E3851F1DC114007C1488 /* SheetSuManager.swift */; };
+		9C50E3891F1DC84A007C1488 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E3881F1DC84A007C1488 /* Location.swift */; };
+		9C50E38C1F1DC9A4007C1488 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E38B1F1DC9A4007C1488 /* Constants.swift */; };
+		9C50E38F1F1DCCBD007C1488 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E38E1F1DCCBD007C1488 /* RequestService.swift */; };
+		9C50E3921F1DEA87007C1488 /* LocationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E3911F1DEA87007C1488 /* LocationsVC.swift */; };
+		9C50E3951F1DEB4C007C1488 /* UIViewController + Alert Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E3941F1DEB4C007C1488 /* UIViewController + Alert Controller.swift */; };
+		9C50E3981F1DED15007C1488 /* Date + Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E3971F1DED15007C1488 /* Date + Formatting.swift */; };
+		9C50E39A1F1DEE77007C1488 /* CLLocationCoordinate2D + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E3991F1DEE77007C1488 /* CLLocationCoordinate2D + String.swift */; };
+		9C50E39C1F1DFC32007C1488 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E39B1F1DFC32007C1488 /* MapVC.swift */; };
+		9C50E39F1F1DFFA1007C1488 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C50E39E1F1DFFA1007C1488 /* LocationAnnotation.swift */; };
+		C4FE1F31BFD990CC1DCA1B28 /* Pods_Sheetsu_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB15A546F04F236647E06A8 /* Pods_Sheetsu_Sample.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		29829852E5310543681AC8E4 /* Pods-Sheetsu Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sheetsu Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sheetsu Sample/Pods-Sheetsu Sample.debug.xcconfig"; sourceTree = "<group>"; };
+		5DB15A546F04F236647E06A8 /* Pods_Sheetsu_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sheetsu_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1B25CE96BC648A5981FB69 /* Pods-Sheetsu Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sheetsu Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sheetsu Sample/Pods-Sheetsu Sample.release.xcconfig"; sourceTree = "<group>"; };
+		9C50E36F1F1DBF24007C1488 /* Sheetsu Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sheetsu Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C50E3721F1DBF24007C1488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9C50E3771F1DBF24007C1488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C50E3791F1DBF24007C1488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C50E37C1F1DBF24007C1488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C50E37E1F1DBF24007C1488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C50E3851F1DC114007C1488 /* SheetSuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SheetSuManager.swift; path = SheetSu/SheetSuManager.swift; sourceTree = "<group>"; };
+		9C50E3881F1DC84A007C1488 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = SheetSu/Models/Location.swift; sourceTree = "<group>"; };
+		9C50E38B1F1DC9A4007C1488 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = SheetSu/Constants.swift; sourceTree = "<group>"; };
+		9C50E38E1F1DCCBD007C1488 /* RequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestService.swift; path = SheetSu/Services/RequestService.swift; sourceTree = "<group>"; };
+		9C50E3911F1DEA87007C1488 /* LocationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationsVC.swift; path = ViewController/LocationsVC.swift; sourceTree = "<group>"; };
+		9C50E3941F1DEB4C007C1488 /* UIViewController + Alert Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController + Alert Controller.swift"; path = "ViewController/Extensions/UIViewController + Alert Controller.swift"; sourceTree = "<group>"; };
+		9C50E3971F1DED15007C1488 /* Date + Formatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date + Formatting.swift"; path = "Extensions/Date + Formatting.swift"; sourceTree = "<group>"; };
+		9C50E3991F1DEE77007C1488 /* CLLocationCoordinate2D + String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CLLocationCoordinate2D + String.swift"; path = "Extensions/CLLocationCoordinate2D + String.swift"; sourceTree = "<group>"; };
+		9C50E39B1F1DFC32007C1488 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapVC.swift; path = ViewController/MapVC.swift; sourceTree = "<group>"; };
+		9C50E39E1F1DFFA1007C1488 /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationAnnotation.swift; path = Map/LocationAnnotation.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C50E36C1F1DBF24007C1488 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4FE1F31BFD990CC1DCA1B28 /* Pods_Sheetsu_Sample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C50E3661F1DBF24007C1488 = {
+			isa = PBXGroup;
+			children = (
+				9C50E3711F1DBF24007C1488 /* Sheetsu Sample */,
+				9C50E3701F1DBF24007C1488 /* Products */,
+				B6B95321AB4CAD1BC0E8CD51 /* Pods */,
+				DE9115E39C0363EB05D426E8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9C50E3701F1DBF24007C1488 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C50E36F1F1DBF24007C1488 /* Sheetsu Sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C50E3711F1DBF24007C1488 /* Sheetsu Sample */ = {
+			isa = PBXGroup;
+			children = (
+				9C50E39D1F1DFF8B007C1488 /* Map */,
+				9C50E3961F1DECF6007C1488 /* Extensions */,
+				9C50E3901F1DEA54007C1488 /* ViewControllers */,
+				9C50E3841F1DC06C007C1488 /* SheetSu */,
+				9C50E3721F1DBF24007C1488 /* AppDelegate.swift */,
+				9C50E3761F1DBF24007C1488 /* Main.storyboard */,
+				9C50E3791F1DBF24007C1488 /* Assets.xcassets */,
+				9C50E37B1F1DBF24007C1488 /* LaunchScreen.storyboard */,
+				9C50E37E1F1DBF24007C1488 /* Info.plist */,
+			);
+			path = "Sheetsu Sample";
+			sourceTree = "<group>";
+		};
+		9C50E3841F1DC06C007C1488 /* SheetSu */ = {
+			isa = PBXGroup;
+			children = (
+				9C50E38D1F1DCCA1007C1488 /* Services */,
+				9C50E3871F1DC122007C1488 /* Models */,
+				9C50E3851F1DC114007C1488 /* SheetSuManager.swift */,
+				9C50E38B1F1DC9A4007C1488 /* Constants.swift */,
+			);
+			name = SheetSu;
+			sourceTree = "<group>";
+		};
+		9C50E3871F1DC122007C1488 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C50E3881F1DC84A007C1488 /* Location.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9C50E38D1F1DCCA1007C1488 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9C50E38E1F1DCCBD007C1488 /* RequestService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		9C50E3901F1DEA54007C1488 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C50E3931F1DEB1D007C1488 /* Extensions */,
+				9C50E3911F1DEA87007C1488 /* LocationsVC.swift */,
+				9C50E39B1F1DFC32007C1488 /* MapVC.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9C50E3931F1DEB1D007C1488 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C50E3941F1DEB4C007C1488 /* UIViewController + Alert Controller.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9C50E3961F1DECF6007C1488 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C50E3971F1DED15007C1488 /* Date + Formatting.swift */,
+				9C50E3991F1DEE77007C1488 /* CLLocationCoordinate2D + String.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		9C50E39D1F1DFF8B007C1488 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9C50E39E1F1DFFA1007C1488 /* LocationAnnotation.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		B6B95321AB4CAD1BC0E8CD51 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29829852E5310543681AC8E4 /* Pods-Sheetsu Sample.debug.xcconfig */,
+				6D1B25CE96BC648A5981FB69 /* Pods-Sheetsu Sample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE9115E39C0363EB05D426E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DB15A546F04F236647E06A8 /* Pods_Sheetsu_Sample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C50E36E1F1DBF24007C1488 /* Sheetsu Sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C50E3811F1DBF24007C1488 /* Build configuration list for PBXNativeTarget "Sheetsu Sample" */;
+			buildPhases = (
+				DBD03849FE8CB61776D0D071 /* [CP] Check Pods Manifest.lock */,
+				9C50E36B1F1DBF24007C1488 /* Sources */,
+				9C50E36C1F1DBF24007C1488 /* Frameworks */,
+				9C50E36D1F1DBF24007C1488 /* Resources */,
+				6D24B59EC96F293FF33567B7 /* [CP] Embed Pods Frameworks */,
+				0C07610E633502372C587553 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sheetsu Sample";
+			productName = "Sheetsu Sample";
+			productReference = 9C50E36F1F1DBF24007C1488 /* Sheetsu Sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C50E3671F1DBF24007C1488 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = sheetsu;
+				TargetAttributes = {
+					9C50E36E1F1DBF24007C1488 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = TP3ZRHU6JQ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9C50E36A1F1DBF24007C1488 /* Build configuration list for PBXProject "Sheetsu Sample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C50E3661F1DBF24007C1488;
+			productRefGroup = 9C50E3701F1DBF24007C1488 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C50E36E1F1DBF24007C1488 /* Sheetsu Sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C50E36D1F1DBF24007C1488 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C50E37D1F1DBF24007C1488 /* LaunchScreen.storyboard in Resources */,
+				9C50E37A1F1DBF24007C1488 /* Assets.xcassets in Resources */,
+				9C50E3781F1DBF24007C1488 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C07610E633502372C587553 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sheetsu Sample/Pods-Sheetsu Sample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D24B59EC96F293FF33567B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sheetsu Sample/Pods-Sheetsu Sample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sheetsu Sample/Pods-Sheetsu Sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBD03849FE8CB61776D0D071 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sheetsu Sample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C50E36B1F1DBF24007C1488 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C50E3951F1DEB4C007C1488 /* UIViewController + Alert Controller.swift in Sources */,
+				9C50E38C1F1DC9A4007C1488 /* Constants.swift in Sources */,
+				9C50E3921F1DEA87007C1488 /* LocationsVC.swift in Sources */,
+				9C50E38F1F1DCCBD007C1488 /* RequestService.swift in Sources */,
+				9C50E3861F1DC114007C1488 /* SheetSuManager.swift in Sources */,
+				9C50E39C1F1DFC32007C1488 /* MapVC.swift in Sources */,
+				9C50E3891F1DC84A007C1488 /* Location.swift in Sources */,
+				9C50E3981F1DED15007C1488 /* Date + Formatting.swift in Sources */,
+				9C50E3731F1DBF24007C1488 /* AppDelegate.swift in Sources */,
+				9C50E39F1F1DFFA1007C1488 /* LocationAnnotation.swift in Sources */,
+				9C50E39A1F1DEE77007C1488 /* CLLocationCoordinate2D + String.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9C50E3761F1DBF24007C1488 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C50E3771F1DBF24007C1488 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9C50E37B1F1DBF24007C1488 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C50E37C1F1DBF24007C1488 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C50E37F1F1DBF24007C1488 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C50E3801F1DBF24007C1488 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C50E3821F1DBF24007C1488 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29829852E5310543681AC8E4 /* Pods-Sheetsu Sample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TP3ZRHU6JQ;
+				INFOPLIST_FILE = "Sheetsu Sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vitalii.hudenko.Sheetsu-Sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9C50E3831F1DBF24007C1488 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D1B25CE96BC648A5981FB69 /* Pods-Sheetsu Sample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TP3ZRHU6JQ;
+				INFOPLIST_FILE = "Sheetsu Sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vitalii.hudenko.Sheetsu-Sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C50E36A1F1DBF24007C1488 /* Build configuration list for PBXProject "Sheetsu Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C50E37F1F1DBF24007C1488 /* Debug */,
+				9C50E3801F1DBF24007C1488 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C50E3811F1DBF24007C1488 /* Build configuration list for PBXNativeTarget "Sheetsu Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C50E3821F1DBF24007C1488 /* Debug */,
+				9C50E3831F1DBF24007C1488 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C50E3671F1DBF24007C1488 /* Project object */;
+}
